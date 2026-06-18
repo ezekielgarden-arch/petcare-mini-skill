@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PetCare Mini Skill</title>
+    <meta
+      name="description"
+      content="A tiny multilingual daily care assistant for cats and dogs."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Cat & dog care, made tiny</p>
+          <h1 data-i18n="hero.title">PetCare Mini Skill</h1>
+          <p class="hero-copy" data-i18n="hero.subtitle">
+            A lightweight daily care assistant for cats and dogs.
+          </p>
+        </div>
+        <label class="language-field">
+          <span data-i18n="language.label">Language</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="en">English</option>
+            <option value="zh-CN">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+        </label>
+      </header>
+
+      <section class="notice" aria-label="Disclaimer">
+        <strong data-i18n="disclaimer.title">Friendly reminder</strong>
+        <span data-i18n="disclaimer.body">
+          This tool is for general daily care reminders only and does not replace professional veterinary advice.
+        </span>
+      </section>
+
+      <div class="app-grid">
+        <section class="panel form-panel">
+          <div class="section-heading">
+            <span class="icon" aria-hidden="true">🐾</span>
+            <div>
+              <h2 data-i18n="form.title">Pet profile</h2>
+              <p data-i18n="form.subtitle">Tell us the basics and get a gentle care plan.</p>
+            </div>
+          </div>
+
+          <form id="petForm" novalidate>
+            <div class="field-group">
+              <label for="petType" data-i18n="form.petType">Pet type</label>
+              <select id="petType" name="petType" required></select>
+            </div>
+
+            <div class="field-group">
+              <label for="petName" data-i18n="form.petName">Pet name</label>
+              <input id="petName" name="petName" type="text" data-i18n-placeholder="form.petNamePlaceholder" />
+            </div>
+
+            <div class="two-column">
+              <div class="field-group">
+                <label for="age" data-i18n="form.age">Age</label>
+                <input id="age" name="age" type="number" min="0" step="0.1" required />
+              </div>
+              <div class="field-group">
+                <label for="ageUnit" data-i18n="form.ageUnit">Age unit</label>
+                <select id="ageUnit" name="ageUnit"></select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="weight" data-i18n="form.weight">Weight (kg)</label>
+              <input id="weight" name="weight" type="number" min="0" step="0.1" required />
+            </div>
+
+            <div class="field-group">
+              <label for="neutered" data-i18n="form.neutered">Neutered / spayed</label>
+              <select id="neutered" name="neutered"></select>
+            </div>
+
+            <fieldset class="concerns">
+              <legend data-i18n="form.concerns">Main concerns</legend>
+              <div id="concernList" class="concern-list"></div>
+            </fieldset>
+
+            <p id="formError" class="form-error" role="alert"></p>
+
+            <div class="button-row">
+              <button type="submit" class="primary-button" data-i18n="actions.generate">
+                Generate Care Plan
+              </button>
+              <button type="button" id="resetButton" class="secondary-button" data-i18n="actions.reset">
+                Reset
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel result-panel" aria-live="polite">
+          <div class="section-heading">
+            <span class="icon" aria-hidden="true">🧡</span>
+            <div>
+              <h2 data-i18n="result.title">Care plan</h2>
+              <p data-i18n="result.subtitle">Your generated checklist will appear here.</p>
+            </div>
+          </div>
+
+          <div id="resultEmpty" class="empty-state">
+            <p data-i18n="result.emptyTitle">No plan yet</p>
+            <span data-i18n="result.emptyBody">Fill in the profile to create a simple daily care plan.</span>
+          </div>
+
+          <div id="resultContent" class="result-content" hidden></div>
+
+          <button type="button" id="copyButton" class="copy-button" disabled data-i18n="actions.copy">
+            Copy result
+          </button>
+          <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+        </section>
+      </div>
+
+      <section class="food-note">
+        <div class="section-heading">
+          <span class="icon" aria-hidden="true">🥣</span>
+          <div>
+            <h2 data-i18n="food.title">Quick Food Safety Note</h2>
+            <p data-i18n="food.subtitle">Small reminders for safer daily feeding.</p>
+          </div>
+        </div>
+        <ul id="foodSafetyList"></ul>
+      </section>
+    </main>
+
+    <script src="data/translations.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
