@@ -22,13 +22,18 @@ PetCare Mini Skill is a lightweight static website that helps pet owners create 
 
 ## Demo
 
-Open `index.html` directly in your browser.
+Online demo, after GitHub Pages is enabled:
 
 ```text
-PetCare-Mini-Skill/index.html
+https://ezekielgarden-arch.github.io/petcare-mini-skill/
 ```
 
-The app works as a static website, so it can also be hosted on GitHub Pages.
+Local demo:
+
+1. Download or clone this repository.
+2. Open `index.html` in your browser.
+
+This is a static website. No backend, API key, or build step is required.
 
 ## File Structure
 
