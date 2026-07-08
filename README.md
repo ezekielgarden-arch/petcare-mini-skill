@@ -2,6 +2,12 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | [日本語](README.ja.md)
 
+<p align="center">
+  <a href="https://estherliu-lab.github.io/petcare-mini-skill/">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Festherliu-lab.github.io%2Fpetcare-mini-skill%2F" alt="QR code to open PetCare Mini Skill" width="160" height="160">
+  </a>
+</p>
+
 A tiny multilingual daily care assistant for cats and dogs.
 
 PetCare Mini Skill is a lightweight static website that helps pet owners create a simple daily care checklist from basic pet information. It is warm, practical, slightly cute, and intentionally conservative: it does not diagnose medical conditions or replace veterinary advice.
@@ -22,7 +28,7 @@ PetCare Mini Skill is a lightweight static website that helps pet owners create 
 
 ## Demo
 
-Online demo: [https://ezekielgarden-arch.github.io/petcare-mini-skill/](https://ezekielgarden-arch.github.io/petcare-mini-skill/)
+Online demo: [https://estherliu-lab.github.io/petcare-mini-skill/](https://estherliu-lab.github.io/petcare-mini-skill/)
 
 Local demo:
 
